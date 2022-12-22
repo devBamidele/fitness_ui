@@ -1,3 +1,4 @@
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:fitness_ui/components/change_theme_button.dart';
 import 'package:flutter/material.dart';
 
@@ -6,19 +7,21 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Theme'),
-        actions: const [
-          ChangeThemeButton(),
-        ],
-      ),
-      body: const SafeArea(
-        child: Center(
-          child: Text(
-            'Hello World',
-            style: TextStyle(
-              fontSize: 30,
+    return ThemeSwitchingArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Theme'),
+          actions: const [
+            ChangeThemeButton(),
+          ],
+        ),
+        body: const SafeArea(
+          child: Center(
+            child: Text(
+              'Hello World',
+              style: TextStyle(
+                fontSize: 30,
+              ),
             ),
           ),
         ),
