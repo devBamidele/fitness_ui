@@ -122,13 +122,31 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40),
-                    child: SizedBox(
-                      height: 210,
-                      child: BarChartHome(),
-                    ),
+                  const SizedBox(
+                    height: 210,
+                    child: BarChartHome(),
                   ),
+                  addVerticalSpace(20),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text('My Plan'),
+                            Text('March 2021'),
+                          ],
+                        ),
+                        Image.asset(
+                          'assets/icons/two_dots.png',
+                          height: 20,
+                          color: colors.onBackground,
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),

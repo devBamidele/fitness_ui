@@ -1,4 +1,5 @@
 import 'package:fitness_ui/bar_titles.dart';
+import 'package:fitness_ui/utils/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class BarChartHome extends StatelessWidget {
       BarChartData(
         maxY: 100,
         minY: 0,
-        groupsSpace: 20,
+        groupsSpace: 28,
         barGroups: BarData.barData
             .map(
               (data) => BarChartGroupData(
@@ -24,11 +25,11 @@ class BarChartHome extends StatelessWidget {
                     backDrawRodData: BackgroundBarChartRodData(
                       fromY: 0,
                       toY: 100,
-                      color: colors.onBackground.withAlpha(70),
+                      color: colors.onBackground.withAlpha(50),
                       show: true,
                     ),
                     toY: data.y,
-                    color: data.color,
+                    color: data.id % 2 == 0 ? colors.onBackground : kTileColor,
                     width: 18,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(10),

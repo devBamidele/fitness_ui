@@ -19,7 +19,7 @@ class BarTitles {
             child: Text(
               text,
               style: const TextStyle(
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
           );
