@@ -42,7 +42,7 @@ class BarChartHome extends StatelessWidget {
         alignment: BarChartAlignment.center,
         barTouchData: BarTouchData(enabled: true),
         titlesData: FlTitlesData(
-          bottomTitles: BarTitles.getBottomTitles(),
+          bottomTitles: BarTitles.getBottomTitles(colors),
           leftTitles: BarTitles.getSideTitles(),
           rightTitles: BarTitles.getSideTitles(),
           topTitles: BarTitles.getSideTitles(),

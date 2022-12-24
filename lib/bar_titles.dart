@@ -1,9 +1,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../sample_data/bar_data.dart';
 
 class BarTitles {
-  static AxisTitles getBottomTitles() {
+  static AxisTitles getBottomTitles(ColorScheme colors) {
     return AxisTitles(
       sideTitles: SideTitles(
         reservedSize: 35,
@@ -18,8 +20,10 @@ class BarTitles {
             padding: const EdgeInsets.only(top: 10),
             child: Text(
               text,
-              style: const TextStyle(
-                fontSize: 18,
+              style: GoogleFonts.plusJakartaSans(
+                fontSize: 15,
+                color: colors.onBackground,
+                fontWeight: FontWeight.w500,
               ),
             ),
           );
