@@ -18,8 +18,22 @@ extension DarkMode on BuildContext {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  fitnessTypeSelected(int index) {
+    setState(() {
+      for (int i = 0; i < fitnessData.length; i++) {
+        fitnessData[i].selected = false;
+      }
+      fitnessData[index].selected = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -131,13 +145,14 @@ class HomePage extends StatelessWidget {
                   ),
                   addVerticalSpace(30),
                   SizedBox(
-                    height: 130,
+                    height: 140,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: fitnessData.length,
                       itemBuilder: (BuildContext context, int index) {
                         return FitnessItem(
                           item: fitnessData[index],
+                          onTap: () => fitnessTypeSelected(index),
                         );
                       },
                     ),
