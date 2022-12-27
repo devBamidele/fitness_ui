@@ -1,6 +1,7 @@
 import 'package:fitness_ui/models/fitness.dart';
 import 'package:fitness_ui/pages/home_page.dart';
 import 'package:fitness_ui/sample_data/fitness_data.dart';
+import 'package:fitness_ui/utils/extensions.dart';
 import 'package:fitness_ui/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

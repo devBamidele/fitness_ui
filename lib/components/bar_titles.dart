@@ -1,8 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../sample_data/bar_data.dart';
+import '../../sample_data/bar_data.dart';
 
 class BarTitles {
   static AxisTitles getBottomTitles(ColorScheme colors) {

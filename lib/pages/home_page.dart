@@ -2,21 +2,12 @@ import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:fitness_ui/components/bar_chart_home.dart';
 import 'package:fitness_ui/components/change_theme_button.dart';
 import 'package:fitness_ui/sample_data/fitness_data.dart';
-import 'package:fitness_ui/utils/colors.dart';
+import 'package:fitness_ui/utils/extensions.dart';
 import 'package:fitness_ui/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../components/fitness_item.dart';
 import '../components/notification_badge.dart';
-
-extension DarkMode on BuildContext {
-  /// is dark mode currently enabled?
-  bool get isDarkMode {
-    final brightness = ThemeModelInheritedNotifier.of(this).theme.brightness;
-    return brightness == Brightness.dark;
-  }
-}
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -84,34 +75,21 @@ class _HomePageState extends State<HomePage> {
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: 'Hello ',
-                                        style: GoogleFonts.plusJakartaSans(
-                                          fontSize: 16,
-                                          color: colors.onBackground
-                                              .withOpacity(0.8),
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                        style: context.headline5,
                                       ),
                                       TextSpan(
                                         text: ' Bamidele',
-                                        style: GoogleFonts.plusJakartaSans(
-                                          fontSize: 16,
-                                          color: context.isDarkMode
-                                              ? kTileColor.withOpacity(0.9)
-                                              : colors.onBackground,
-                                          fontWeight: FontWeight.w600,
-                                        ),
+                                        style: context.username,
                                       )
                                     ],
                                   ),
                                 ),
-                                addVerticalSpace(5),
+                                addVerticalSpace(6),
                                 Text(
                                   'Monday, 21 March',
-                                  style: GoogleFonts.plusJakartaSans(
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                                  style: context.headline4,
                                 ),
+                                addVerticalSpace(5),
                               ],
                             )
                           ],
@@ -126,24 +104,17 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  addVerticalSpace(30),
+                  addVerticalSpace(35),
                   Text(
                     '1,235 Kcal',
-                    style: GoogleFonts.plusJakartaSans(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: context.headline1,
                   ),
-                  addVerticalSpace(3),
+                  addVerticalSpace(5),
                   Text(
                     'Total Calories Burnt Today',
-                    style: GoogleFonts.openSans(
-                      fontSize: 16,
-                      color: colors.onBackground.withOpacity(0.8),
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: context.subtitle1,
                   ),
-                  addVerticalSpace(30),
+                  addVerticalSpace(35),
                   SizedBox(
                     height: 140,
                     child: ListView.builder(
@@ -166,19 +137,12 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Text(
                               '8,352 m',
-                              style: GoogleFonts.plusJakartaSans(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: context.bodyText1,
                             ),
                             addVerticalSpace(5),
                             Text(
                               'Distance',
-                              style: GoogleFonts.plusJakartaSans(
-                                fontSize: 15,
-                                color: colors.onBackground.withOpacity(0.8),
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: context.subtitle2,
                             ),
                           ],
                         ),
@@ -186,19 +150,12 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Text(
                               '10,530',
-                              style: GoogleFonts.plusJakartaSans(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: context.bodyText1,
                             ),
                             addVerticalSpace(5),
                             Text(
                               'Steps',
-                              style: GoogleFonts.plusJakartaSans(
-                                fontSize: 15,
-                                color: colors.onBackground.withOpacity(0.8),
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: context.subtitle2,
                             ),
                           ],
                         ),
@@ -206,19 +163,12 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Text(
                               '5,362',
-                              style: GoogleFonts.plusJakartaSans(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: context.bodyText1,
                             ),
                             addVerticalSpace(5),
                             Text(
                               'Points',
-                              style: GoogleFonts.plusJakartaSans(
-                                fontSize: 15,
-                                color: colors.onBackground.withOpacity(0.8),
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: context.subtitle2,
                             ),
                           ],
                         )
@@ -240,18 +190,13 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Text(
                               'My Plan',
-                              style: GoogleFonts.plusJakartaSans(
+                              style: context.bodyText1?.copyWith(
                                 fontSize: 18,
-                                fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
                               'March 2021',
-                              style: GoogleFonts.plusJakartaSans(
-                                fontSize: 15.5,
-                                color: colors.onBackground.withOpacity(0.9),
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: context.subtitle2,
                             ),
                           ],
                         ),

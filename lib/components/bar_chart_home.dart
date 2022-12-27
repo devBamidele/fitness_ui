@@ -1,4 +1,4 @@
-import 'package:fitness_ui/bar_titles.dart';
+import 'package:fitness_ui/components/bar_titles.dart';
 import 'package:fitness_ui/utils/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
