@@ -70,10 +70,51 @@ class SecondPage extends StatelessWidget {
                       style: context.subtitle1,
                     ),
                     addVerticalSpace(10),
-                    const SizedBox(
-                      height: 180,
-                      child: BarChartSecond(),
-                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 180,
+                            child: BarChartSecond(),
+                          ),
+                          addVerticalSpace(30),
+                          const SizedBox(
+                            height: 250,
+                            width: double.infinity,
+                            child: Card(),
+                          ),
+                          addVerticalSpace(20),
+                          OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                              fixedSize: const Size(double.infinity, 63),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              side: BorderSide(
+                                width: 1.75,
+                                color: colors.onBackground.withAlpha(60),
+                              ),
+                            ),
+                            onPressed: () {},
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.ios_share_rounded,
+                                  size: 24,
+                                ),
+                                addHorizontalSpace(8),
+                                Text(
+                                  'Share',
+                                  style: context.headline4,
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:fitness_ui/utils/colors.dart';
+import 'package:fitness_ui/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class MyTheme {
@@ -18,6 +19,7 @@ class MyTheme {
       useMaterial3: true,
     ).copyWith(
       colorScheme: colorScheme,
+      cardTheme: cardTheme(Brightness.light),
       scaffoldBackgroundColor: colorScheme.background,
       outlinedButtonTheme: outlinedButtonTheme(colorScheme),
     );
@@ -29,6 +31,7 @@ class MyTheme {
       useMaterial3: true,
     ).copyWith(
       colorScheme: colorScheme,
+      cardTheme: cardTheme(Brightness.dark),
       scaffoldBackgroundColor: colorScheme.background,
       outlinedButtonTheme: outlinedButtonTheme(colorScheme),
     );
@@ -45,6 +48,16 @@ class MyTheme {
         padding: const EdgeInsets.all(14),
         foregroundColor: colors.onBackground,
       ),
+    );
+  }
+
+  CardTheme cardTheme(Brightness brightness) {
+    bool dark = brightness == Brightness.light ? false : true;
+    return CardTheme(
+      elevation: 2,
+      color: dark ? kDarkCardColor : kLightCardColor,
+      clipBehavior: Clip.antiAlias,
+      shape: kCardShape,
     );
   }
 }

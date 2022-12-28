@@ -47,8 +47,8 @@ class BarTitles {
                 text,
                 style: GoogleFonts.plusJakartaSans(
                   fontSize: 15,
-                  color: colors.onBackground,
-                  fontWeight: FontWeight.w500,
+                  color: colors.onBackground.withOpacity(0.6),
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),

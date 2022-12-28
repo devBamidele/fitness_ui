@@ -1,3 +1,4 @@
+import 'package:fitness_ui/utils/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -34,12 +35,7 @@ class BarChartSecond extends StatelessWidget {
               curveSmoothness: 0.5,
               barWidth: 5.5,
               isStrokeCapRound: true,
-              gradient: const LinearGradient(
-                colors: [
-                  Color(0xffC7DD71),
-                  Color(0xff46C365),
-                ],
-              ),
+              gradient: kGraphGradient,
               dotData: FlDotData(
                 show: false,
               ),
