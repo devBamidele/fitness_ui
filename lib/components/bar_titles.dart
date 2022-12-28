@@ -31,6 +31,33 @@ class BarTitles {
     );
   }
 
+  static AxisTitles getBottomTitlesCurved(ColorScheme colors) {
+    return AxisTitles(
+      sideTitles: SideTitles(
+        interval: 1,
+        reservedSize: 35,
+        showTitles: true,
+        getTitlesWidget: (double id, TitleMeta meta) {
+          String text = BarData.barData[id.toInt() - 1].day;
+          return SideTitleWidget(
+            axisSide: meta.axisSide,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Text(
+                text,
+                style: GoogleFonts.plusJakartaSans(
+                  fontSize: 15,
+                  color: colors.onBackground,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
   static AxisTitles getSideTitles() {
     return AxisTitles(
       sideTitles: SideTitles(

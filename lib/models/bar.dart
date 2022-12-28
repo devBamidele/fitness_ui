@@ -1,15 +1,13 @@
-import 'dart:ui';
-
 class Bar {
   int id;
   String name;
   double y;
-  Color color;
+  String day;
 
   Bar({
     required this.id,
     required this.name,
     required this.y,
-    required this.color,
+    required this.day,
   });
 }
