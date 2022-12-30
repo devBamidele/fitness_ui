@@ -5,6 +5,8 @@ import 'package:fitness_ui/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 
 import '../components/change_theme_button.dart';
+import '../components/second_page_card.dart';
+import '../components/share_button.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
@@ -59,61 +61,37 @@ class SecondPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    addVerticalSpace(40),
+                    addHeight(40),
                     Text(
                       '10,530 Steps',
                       style: context.headline1,
                     ),
-                    addVerticalSpace(5),
+                    addHeight(5),
                     Text(
                       'Today\'s Count',
                       style: context.subtitle1,
                     ),
-                    addVerticalSpace(10),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 180,
-                            child: BarChartSecond(),
-                          ),
-                          addVerticalSpace(30),
-                          const SizedBox(
-                            height: 250,
-                            width: double.infinity,
-                            child: Card(),
-                          ),
-                          addVerticalSpace(20),
-                          OutlinedButton(
-                            style: OutlinedButton.styleFrom(
-                              fixedSize: const Size(double.infinity, 63),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              side: BorderSide(
-                                width: 1.75,
-                                color: colors.onBackground.withAlpha(60),
-                              ),
-                            ),
-                            onPressed: () {},
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Icon(
-                                  Icons.ios_share_rounded,
-                                  size: 24,
-                                ),
-                                addHorizontalSpace(8),
-                                Text(
-                                  'Share',
-                                  style: context.headline4,
-                                )
-                              ],
-                            ),
-                          )
-                        ],
+                    addHeight(10),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      child: SizedBox(
+                        height: 180,
+                        child: BarChartSecond(),
                       ),
+                    ),
+                    addHeight(30),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 4),
+                      child: SizedBox(
+                        height: 250,
+                        width: double.infinity,
+                        child: SecondPageCard(),
+                      ),
+                    ),
+                    addHeight(18),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      child: ShareButton(),
                     )
                   ],
                 ),

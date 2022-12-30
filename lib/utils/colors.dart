@@ -7,6 +7,7 @@ const kTileColor = Color(0xffC8F44F);
 const kTileColorUnselected = Color(0xff363636);
 const kDarkCardColor = Color(0xff202125);
 const kLightCardColor = Color(0xff040405);
+const kIconBackGroundLight = Color(0xff2C2B31);
 
 const kGraphGradient = LinearGradient(
   colors: [

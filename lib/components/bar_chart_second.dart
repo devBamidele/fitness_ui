@@ -42,7 +42,7 @@ class BarChartSecond extends StatelessWidget {
             )
           ],
           titlesData: FlTitlesData(
-            bottomTitles: BarTitles.getBottomTitlesCurved(colors),
+            bottomTitles: BarTitles.getBottomTitlesCurved(colors, context),
             leftTitles: BarTitles.getSideTitles(),
             rightTitles: BarTitles.getSideTitles(),
             topTitles: BarTitles.getSideTitles(),

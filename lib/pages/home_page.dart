@@ -84,12 +84,12 @@ class _HomePageState extends State<HomePage> {
                                     ],
                                   ),
                                 ),
-                                addVerticalSpace(6),
+                                addHeight(6),
                                 Text(
                                   'Monday, 21 March',
                                   style: context.headline4,
                                 ),
-                                addVerticalSpace(5),
+                                addHeight(5),
                               ],
                             )
                           ],
@@ -104,17 +104,17 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  addVerticalSpace(35),
+                  addHeight(35),
                   Text(
                     '1,235 Kcal',
                     style: context.headline1,
                   ),
-                  addVerticalSpace(5),
+                  addHeight(5),
                   Text(
                     'Total Calories Burnt Today',
                     style: context.subtitle1,
                   ),
-                  addVerticalSpace(35),
+                  addHeight(35),
                   SizedBox(
                     height: 140,
                     child: ListView.builder(
@@ -139,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                               '8,352 m',
                               style: context.bodyText1,
                             ),
-                            addVerticalSpace(5),
+                            addHeight(5),
                             Text(
                               'Distance',
                               style: context.subtitle2,
@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                               '10,530',
                               style: context.bodyText1,
                             ),
-                            addVerticalSpace(5),
+                            addHeight(5),
                             Text(
                               'Steps',
                               style: context.subtitle2,
@@ -165,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                               '5,362',
                               style: context.bodyText1,
                             ),
-                            addVerticalSpace(5),
+                            addHeight(5),
                             Text(
                               'Points',
                               style: context.subtitle2,
@@ -179,7 +179,7 @@ class _HomePageState extends State<HomePage> {
                     height: 210,
                     child: BarChartHome(),
                   ),
-                  addVerticalSpace(25),
+                  addHeight(25),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     child: Row(

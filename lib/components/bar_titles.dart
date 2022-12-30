@@ -1,10 +1,13 @@
+import 'package:fitness_ui/utils/extensions.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../sample_data/bar_data.dart';
 
 class BarTitles {
-  static AxisTitles getBottomTitles(ColorScheme colors) {
+  static AxisTitles getBottomTitles(
+    ColorScheme colors,
+    BuildContext context,
+  ) {
     return AxisTitles(
       sideTitles: SideTitles(
         reservedSize: 35,
@@ -19,11 +22,7 @@ class BarTitles {
             padding: const EdgeInsets.only(top: 10),
             child: Text(
               text,
-              style: GoogleFonts.plusJakartaSans(
-                fontSize: 15,
-                color: colors.onBackground,
-                fontWeight: FontWeight.w500,
-              ),
+              style: context.caption,
             ),
           );
         },
@@ -31,7 +30,10 @@ class BarTitles {
     );
   }
 
-  static AxisTitles getBottomTitlesCurved(ColorScheme colors) {
+  static AxisTitles getBottomTitlesCurved(
+    ColorScheme colors,
+    BuildContext context,
+  ) {
     return AxisTitles(
       sideTitles: SideTitles(
         interval: 1,
@@ -45,11 +47,7 @@ class BarTitles {
               padding: const EdgeInsets.only(top: 10),
               child: Text(
                 text,
-                style: GoogleFonts.plusJakartaSans(
-                  fontSize: 15,
-                  color: colors.onBackground.withOpacity(0.6),
-                  fontWeight: FontWeight.bold,
-                ),
+                style: context.caption,
               ),
             ),
           );

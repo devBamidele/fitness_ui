@@ -53,7 +53,7 @@ class FitnessItem extends StatelessWidget {
                     Icons.fitness_center_rounded,
                     color: selected ? kDark : colors.onBackground,
                   ),
-                  addVerticalSpace(10),
+                  addHeight(10),
                   Text.rich(
                     TextSpan(
                       children: <TextSpan>[
@@ -74,7 +74,7 @@ class FitnessItem extends StatelessWidget {
                       ],
                     ),
                   ),
-                  addVerticalSpace(7),
+                  addHeight(7),
                   Text(
                     item.equipment,
                     style: GoogleFonts.plusJakartaSans(

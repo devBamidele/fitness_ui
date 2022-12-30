@@ -63,6 +63,13 @@ extension TypographyUtils on BuildContext {
         wordSpacing: 1.8,
         letterSpacing: .5,
       );
+
+  /// The values of the days of the week 'Mon', 'Tues', 'Wed'
+  TextStyle? get caption => textTheme.caption?.copyWith(
+        fontSize: 15,
+        color: colors.onBackground.withOpacity(0.6),
+        fontWeight: FontWeight.bold,
+      );
 }
 
 extension DarkMode on BuildContext {
