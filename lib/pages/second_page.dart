@@ -83,7 +83,7 @@ class SecondPage extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 4),
                       child: SizedBox(
-                        height: 250,
+                        height: 255,
                         width: double.infinity,
                         child: SecondPageCard(),
                       ),

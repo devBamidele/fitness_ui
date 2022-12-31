@@ -48,4 +48,6 @@ class BarData {
       day: 'Sun',
     ),
   ];
+
+  static List barData2 = [];
 }

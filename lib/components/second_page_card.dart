@@ -1,10 +1,12 @@
 import 'dart:math' as math;
 
 import 'package:fitness_ui/utils/extensions.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/colors.dart';
 import '../utils/widget_functions.dart';
+import 'bar_titles.dart';
 
 class SecondPageCard extends StatelessWidget {
   const SecondPageCard({
@@ -13,6 +15,7 @@ class SecondPageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var rng = math.Random();
     ColorScheme colors = Theme.of(context).colorScheme;
     return Card(
       child: Padding(
@@ -56,6 +59,49 @@ class SecondPageCard extends StatelessWidget {
                   ],
                 )
               ],
+            ),
+            addHeight(10),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: BarChart(
+                  BarChartData(
+                    maxY: 100,
+                    minY: 0,
+                    groupsSpace: 8,
+                    barGroups: List<BarChartGroupData>.generate(
+                      22,
+                      (i) => BarChartGroupData(
+                        x: i,
+                        barRods: [
+                          BarChartRodData(
+                            toY: rng.nextInt(90).toDouble() + 10,
+                            color: colors.onBackground,
+                            width: 7,
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(4),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    alignment: BarChartAlignment.center,
+                    barTouchData: BarTouchData(enabled: false),
+                    titlesData: FlTitlesData(
+                      bottomTitles: BarTitles.getBottomTitlesBars(context),
+                      leftTitles: BarTitles.getSideTitles(),
+                      rightTitles: BarTitles.getSideTitles(),
+                      topTitles: BarTitles.getSideTitles(),
+                    ),
+                    borderData: FlBorderData(
+                      show: false,
+                    ),
+                    gridData: FlGridData(
+                      show: false,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

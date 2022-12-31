@@ -5,7 +5,6 @@ import '../../sample_data/bar_data.dart';
 
 class BarTitles {
   static AxisTitles getBottomTitles(
-    ColorScheme colors,
     BuildContext context,
   ) {
     return AxisTitles(
@@ -31,7 +30,6 @@ class BarTitles {
   }
 
   static AxisTitles getBottomTitlesCurved(
-    ColorScheme colors,
     BuildContext context,
   ) {
     return AxisTitles(
@@ -48,6 +46,35 @@ class BarTitles {
               child: Text(
                 text,
                 style: context.caption,
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  static AxisTitles getBottomTitlesBars(
+    BuildContext context,
+  ) {
+    return AxisTitles(
+      sideTitles: SideTitles(
+        interval: 6,
+        reservedSize: 35,
+        showTitles: true,
+        getTitlesWidget: (double id, TitleMeta meta) {
+          int value = id.toInt() + 1;
+          String text = '';
+          if (value == 1 || value % 6 == 0) {
+            text = value.toString();
+          }
+          return Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Text(
+              text,
+              style: context.caption?.copyWith(
+                color: Colors.white.withOpacity(0.6),
+                fontSize: 14,
               ),
             ),
           );
