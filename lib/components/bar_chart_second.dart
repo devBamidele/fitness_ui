@@ -10,12 +10,10 @@ class BarChartSecond extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ColorScheme colors = Theme.of(context).colorScheme;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: LineChart(
         LineChartData(
-          //lineTouchData: LineTouchData(enabled: false),
           minX: 1,
           maxX: 7,
           minY: 0,

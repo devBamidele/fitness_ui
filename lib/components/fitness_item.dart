@@ -29,7 +29,7 @@ class FitnessItem extends StatelessWidget {
         child: Material(
           borderRadius: const BorderRadius.all(Radius.circular(30)),
           clipBehavior: Clip.antiAlias,
-          elevation: 5,
+          elevation: 2,
           shadowColor: Colors.black,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 18),
@@ -61,7 +61,7 @@ class FitnessItem extends StatelessWidget {
                           text: item.kcal.toString(),
                           style: GoogleFonts.plusJakartaSans(
                             fontSize: 17,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                         TextSpan(
@@ -74,7 +74,7 @@ class FitnessItem extends StatelessWidget {
                       ],
                     ),
                   ),
-                  addHeight(7),
+                  addHeight(5),
                   Text(
                     item.equipment,
                     style: GoogleFonts.plusJakartaSans(

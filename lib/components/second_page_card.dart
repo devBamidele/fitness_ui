@@ -4,6 +4,7 @@ import 'package:fitness_ui/utils/extensions.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
+import '../sample_data/bar_data.dart';
 import '../utils/colors.dart';
 import '../utils/widget_functions.dart';
 import 'bar_titles.dart';
@@ -60,7 +61,7 @@ class SecondPageCard extends StatelessWidget {
                 )
               ],
             ),
-            addHeight(10),
+            addHeight(25),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(left: 15),
@@ -76,7 +77,7 @@ class SecondPageCard extends StatelessWidget {
                         barRods: [
                           BarChartRodData(
                             toY: rng.nextInt(90).toDouble() + 10,
-                            color: colors.onBackground,
+                            color: BarData.barColors()[i],
                             width: 7,
                             borderRadius: const BorderRadius.all(
                               Radius.circular(4),

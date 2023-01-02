@@ -1,10 +1,12 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:fitness_ui/components/bar_chart_home.dart';
 import 'package:fitness_ui/components/change_theme_button.dart';
 import 'package:fitness_ui/sample_data/fitness_data.dart';
 import 'package:fitness_ui/utils/extensions.dart';
 import 'package:fitness_ui/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:fitness_ui/pages/second_page.dart';
 
 import '../components/fitness_item.dart';
 import '../components/notification_badge.dart';
@@ -20,9 +22,8 @@ class _HomePageState extends State<HomePage> {
   fitnessTypeSelected(int index) {
     setState(() {
       for (int i = 0; i < fitnessData.length; i++) {
-        fitnessData[i].selected = false;
+        fitnessData[i].selected = (i == index);
       }
-      fitnessData[index].selected = true;
     });
   }
 
@@ -59,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                                 children: const [
                                   CircleAvatar(
                                     backgroundImage: AssetImage(
-                                      'assets/images/profile-pic.png',
+                                      'assets/images/pic.jpg',
                                     ),
                                     radius: 27,
                                   ),
@@ -121,8 +122,9 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       itemCount: fitnessData.length,
                       itemBuilder: (BuildContext context, int index) {
+                        var item = fitnessData[index];
                         return FitnessItem(
-                          item: fitnessData[index],
+                          item: item,
                           onTap: () => fitnessTypeSelected(index),
                         );
                       },
@@ -146,18 +148,21 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
-                        Column(
-                          children: [
-                            Text(
-                              '10,530',
-                              style: context.bodyText1,
-                            ),
-                            addHeight(5),
-                            Text(
-                              'Steps',
-                              style: context.subtitle2,
-                            ),
-                          ],
+                        GestureDetector(
+                          onTap: () => context.router.pushNamed(SecondPage.tag),
+                          child: Column(
+                            children: [
+                              Text(
+                                '10,530',
+                                style: context.bodyText1,
+                              ),
+                              addHeight(5),
+                              Text(
+                                'Steps',
+                                style: context.subtitle2,
+                              ),
+                            ],
+                          ),
                         ),
                         Column(
                           children: [

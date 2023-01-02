@@ -1,3 +1,4 @@
+import 'package:fitness_ui/utils/colors.dart';
 import 'package:flutter/material.dart';
 import '../models/bar.dart';
 
@@ -49,5 +50,30 @@ class BarData {
     ),
   ];
 
-  static List barData2 = [];
+  static List barColors() {
+    return [
+      Colors.white,
+      kTileColor.withOpacity(0.35),
+      Colors.white,
+      kTileColor,
+      Colors.white,
+      kTileColor.withOpacity(0.35),
+      kTileColor.withOpacity(0.35),
+      kTileColor.withOpacity(0.35),
+      Colors.white,
+      Colors.white,
+      kTileColor,
+      Colors.white,
+      kTileColor.withOpacity(0.35),
+      kTileColor.withOpacity(0.35),
+      kTileColor.withOpacity(0.35),
+      Colors.white,
+      Colors.white,
+      kTileColor.withOpacity(0.35),
+      kTileColor.withOpacity(0.35),
+      kTileColor,
+      Colors.white,
+      kTileColor.withOpacity(0.35),
+    ];
+  }
 }

@@ -54,7 +54,6 @@ class MyTheme {
   CardTheme cardTheme(Brightness brightness) {
     bool dark = brightness == Brightness.light ? false : true;
     return CardTheme(
-      elevation: 2,
       color: dark ? kDarkCardColor : kLightCardColor,
       clipBehavior: Clip.antiAlias,
       shape: kCardShape,
