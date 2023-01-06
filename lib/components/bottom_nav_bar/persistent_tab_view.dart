@@ -110,22 +110,7 @@ class _CustomPersistentTabViewState extends State<CustomPersistentTabView> {
           ),
           bottomScreenMargin: kBottomNavigationBarHeight,
           onWillPop: (final context) async {
-            await showDialog(
-              context: this.context,
-              useSafeArea: true,
-              builder: (final context) => Container(
-                height: 50,
-                width: 50,
-                color: Colors.white,
-                child: ElevatedButton(
-                  child: const Text("Close"),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
-            );
-            return false;
+            return true;
           },
           customWidget: CustomNavBarWidget(
             _navBarItems(),
