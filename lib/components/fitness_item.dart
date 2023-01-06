@@ -39,7 +39,7 @@ class FitnessItem extends StatelessWidget {
                   ? kSecondary
                   : context.isDarkMode
                       ? kTileColorUnselected
-                      : colors.onBackground.withAlpha(30),
+                      : kTileColorUnselectedDark,
             ),
             child: DefaultTextStyle(
               style: TextStyle(

@@ -20,7 +20,7 @@ class MyTheme {
     ).copyWith(
       colorScheme: colorScheme,
       cardTheme: cardTheme(Brightness.light),
-      scaffoldBackgroundColor: colorScheme.background,
+      scaffoldBackgroundColor: kLight,
       outlinedButtonTheme: outlinedButtonTheme(colorScheme),
     );
   }
@@ -30,9 +30,12 @@ class MyTheme {
     return ThemeData.dark(
       useMaterial3: true,
     ).copyWith(
+      appBarTheme: const AppBarTheme(
+        backgroundColor: kDark,
+      ),
       colorScheme: colorScheme,
       cardTheme: cardTheme(Brightness.dark),
-      scaffoldBackgroundColor: colorScheme.background,
+      scaffoldBackgroundColor: kDark,
       outlinedButtonTheme: outlinedButtonTheme(colorScheme),
     );
   }

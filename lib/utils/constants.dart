@@ -7,3 +7,5 @@ final kCardShape = RoundedRectangleBorder(
 final kButtonShape = RoundedRectangleBorder(
   borderRadius: BorderRadius.circular(20),
 );
+
+const kBottomNavigationBarHeight = 85;
